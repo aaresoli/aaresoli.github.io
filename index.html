@@ -3,21 +3,78 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aashish Reddy Solipuram</title>
-<meta name="description" content="Aashish Reddy Solipuram — MS Information Systems at Indiana University Kelley. Software engineer working across enterprise systems, cloud, and applied AI.">
-<meta property="og:title" content="Aashish Reddy Solipuram">
+<title>Aashish Reddy Solipuram — Software Engineer</title>
+<meta name="description" content="Aashish Reddy Solipuram — software engineer in enterprise systems, cloud, and applied AI; M.S. candidate at Indiana University’s Kelley School of Business.">
+<link rel="canonical" href="https://aaresoli.github.io/">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131211" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Aashish Reddy Solipuram — Software Engineer">
 <meta property="og:description" content="Software engineer working across enterprise systems, cloud, and applied AI.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aaresoli.github.io/">
+<meta property="og:site_name" content="Aashish Reddy Solipuram">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://aaresoli.github.io/og.png">
+<meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Aashish Reddy Solipuram — software engineer in enterprise systems, cloud, and applied AI.">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23990000'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='34' fill='%23fff'>A</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<meta name="twitter:title" content="Aashish Reddy Solipuram — Software Engineer">
+<meta name="twitter:description" content="Software engineer working across enterprise systems, cloud, and applied AI.">
+<meta name="twitter:image" content="https://aaresoli.github.io/og.png">
+<meta name="twitter:image:alt" content="Aashish Reddy Solipuram — software engineer in enterprise systems, cloud, and applied AI.">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add("js");</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Aashish Reddy Solipuram",
+  "url": "https://aaresoli.github.io/",
+  "jobTitle": "Software Engineer",
+  "sameAs": [
+    "https://www.linkedin.com/in/aashishreddy7",
+    "https://github.com/aaresoli"
+  ]
+}
+</script>
 <style>
+  @font-face {
+    font-family: "Instrument Serif";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("assets/fonts/instrument-serif-regular.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Instrument Serif";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("assets/fonts/instrument-serif-italic.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("assets/fonts/inter-latin.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "JetBrains Mono";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("assets/fonts/jetbrains-mono-latin.woff2") format("woff2");
+  }
+
   :root {
     --bg: #f7f5f0;
     --fg: #1b1a17;
@@ -26,6 +83,7 @@
     --rule: #e3dfd5;
     --accent: #990000;
     --chip: #efebe2;
+    --selection-fg: #fff;
     --serif: "Instrument Serif", Georgia, serif;
     --sans: "Inter", system-ui, -apple-system, Segoe UI, sans-serif;
     --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
@@ -39,10 +97,11 @@
       --rule: #2a2825;
       --accent: #e0645c;
       --chip: #1f1d1b;
+      --selection-fg: #131211;
     }
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; color-scheme: light dark; }
   body {
     background: var(--bg);
     color: var(--fg);
@@ -50,21 +109,32 @@
     -webkit-font-smoothing: antialiased;
   }
   a { color: inherit; text-decoration: none; }
-  ::selection { background: var(--accent); color: #fff; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  ::selection { background: var(--accent); color: var(--selection-fg); }
 
   .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .skip-link {
+    position: fixed; top: 10px; left: 10px; z-index: 100;
+    padding: 9px 14px; border-radius: 8px; background: var(--fg); color: var(--bg);
+    font-size: 14px; font-weight: 600; transform: translateY(-160%);
+  }
+  .skip-link:focus { transform: translateY(0); }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; white-space: nowrap; border: 0;
+  }
 
   nav {
     position: sticky; top: 0; z-index: 10;
-    background: color-mix(in srgb, var(--bg) 85%, transparent);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid transparent;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
   }
-  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 60px; }
-  .mark { font-family: var(--serif); font-size: 22px; }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; min-height: 60px; }
+  .mark { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--serif); font-size: 22px; }
   .mark span { color: var(--accent); }
   nav ul { display: flex; gap: 22px; list-style: none; font-size: 14px; color: var(--muted); }
-  nav ul a:hover { color: var(--fg); }
+  nav ul a { display: inline-flex; align-items: center; min-height: 44px; }
+  nav ul a:hover, nav ul a:focus-visible { color: var(--fg); }
 
   header { padding: 96px 0 72px; }
   .eyebrow {
@@ -81,19 +151,20 @@
   .lede strong { color: var(--fg); font-weight: 500; }
   .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; }
   .btn {
+    display: inline-flex; align-items: center; min-height: 44px;
     font-size: 14px; padding: 9px 16px; border-radius: 999px;
-    border: 1px solid var(--rule); transition: border-color .2s, background .2s;
+    border: 1px solid var(--faint); transition: border-color .2s, background .2s;
   }
-  .btn:hover { border-color: var(--fg); }
+  .btn:hover, .btn:focus-visible { border-color: var(--fg); }
   .btn.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
-  .btn.primary:hover { opacity: .88; }
+  .btn.primary:hover, .btn.primary:focus-visible { opacity: .88; }
 
-  section { padding: 56px 0; border-top: 1px solid var(--rule); }
+  section { padding: 56px 0; border-top: 1px solid var(--rule); scroll-margin-top: 60px; }
   h2 {
     font: 400 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase;
     color: var(--muted); margin-bottom: 32px;
   }
-  h2 b { color: var(--accent); font-weight: 400; margin-right: 8px; }
+  h2 .section-number { color: var(--accent); margin-right: 8px; }
 
   .about p { font-family: var(--serif); font-size: 25px; line-height: 1.4; }
   .about p + p { margin-top: 18px; }
@@ -109,32 +180,37 @@
   .when { font: 400 12.5px/1.7 var(--mono); color: var(--faint); padding-top: 3px; }
   .item h3 { font-size: 17px; font-weight: 600; line-height: 1.4; }
   .item .role { color: var(--muted); font-size: 15px; margin: 2px 0 12px; }
-  .item ul { list-style: none; }
-  .item li { position: relative; padding-left: 18px; color: var(--fg); font-size: 15px; }
-  .item li + li { margin-top: 8px; }
-  .item li::before { content: ""; position: absolute; left: 0; top: .78em; width: 8px; height: 1px; background: var(--faint); }
-  .item li b { font-weight: 600; }
-  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
-  .tag { font: 400 11.5px/1 var(--mono); padding: 6px 9px; border-radius: 6px; background: var(--chip); color: var(--muted); }
+  .details { list-style: none; }
+  .details li { position: relative; padding-left: 18px; color: var(--fg); font-size: 15px; }
+  .details li + li { margin-top: 8px; }
+  .details li::before { content: ""; position: absolute; left: 0; top: .78em; width: 8px; height: 1px; background: var(--faint); }
+  .details li b { font-weight: 600; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; list-style: none; }
+  .tag { font: 400 12px/1 var(--mono); padding: 6px 9px; border-radius: 6px; background: var(--chip); color: var(--muted); }
 
   .skills { display: grid; grid-template-columns: 150px 1fr; gap: 18px 24px; }
   .skills dt { font: 400 12.5px/1.9 var(--mono); color: var(--faint); }
   .skills dd { font-size: 15px; }
 
-  .contact h3 { font: 400 clamp(28px, 7vw, 54px)/1.1 var(--serif); margin-bottom: 18px; overflow-wrap: anywhere; }
-  .contact h3 a { border-bottom: 1px solid var(--rule); transition: border-color .2s, color .2s; }
-  .contact h3 a:hover { color: var(--accent); border-color: var(--accent); }
+  .contact-email { font: 400 clamp(28px, 7vw, 54px)/1.1 var(--serif); margin-bottom: 18px; overflow-wrap: anywhere; }
+  .contact-email a { text-decoration: underline; text-decoration-color: var(--faint); text-decoration-thickness: 1px; text-underline-offset: .12em; transition: color .2s, text-decoration-color .2s; }
+  .contact-email a:hover, .contact-email a:focus-visible { color: var(--accent); text-decoration-color: var(--accent); }
   .contact p { color: var(--muted); max-width: 520px; }
 
-  footer { padding: 40px 0 56px; font: 400 12px/1 var(--mono); color: var(--faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer { font: 400 12px/1.4 var(--mono); color: var(--faint); }
+  footer .wrap { padding-top: 40px; padding-bottom: 56px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 
-  .reveal { opacity: 0; transform: translateY(12px); transition: opacity .7s ease, transform .7s ease; }
-  .reveal.in { opacity: 1; transform: none; }
-  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+  .reveal { opacity: 1; transform: none; }
+  .js .reveal { opacity: 0; transform: translateY(12px); transition: opacity .7s ease, transform .7s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+  }
 
   @media (max-width: 640px) {
     .wrap { padding: 0 16px; }
-    nav ul { gap: 14px; font-size: 13px; }
+    nav ul { gap: 12px; font-size: 13px; }
     nav ul li.hide-sm { display: none; }
     header { padding: 64px 0 48px; }
     .about p { font-size: 21px; }
@@ -143,180 +219,220 @@
     .skills dd { margin-bottom: 12px; }
     .stats { grid-template-columns: 1fr; }
   }
+
+  @media (max-width: 300px) {
+    .mark { display: none; }
+    nav ul { width: 100%; justify-content: space-between; }
+  }
+
+  @media print {
+    @page { margin: .6in; }
+    :root {
+      --bg: #fff; --fg: #111; --muted: #444; --faint: #555;
+      --rule: #ccc; --accent: #750000; --chip: #f2f2f2;
+    }
+    nav, .skip-link { display: none; }
+    body { font-size: 11pt; background: #fff; }
+    .wrap { max-width: none; padding-right: 0; padding-left: 0; }
+    header { padding: 0 0 32px; }
+    h1 { font-size: 48px; }
+    section { padding: 30px 0; scroll-margin-top: 0; }
+    .js .reveal, .reveal { opacity: 1; transform: none; transition: none; }
+    .item, .stat, .skills, .contact { break-inside: avoid; }
+    footer .wrap { padding: 28px 0 0; }
+  }
 </style>
 </head>
-<body>
+<body id="top">
 
-<nav>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav aria-label="Primary navigation">
   <div class="wrap">
-    <a href="#" class="mark">Aashish<span>.</span></a>
+    <a href="#top" class="mark" aria-label="Aashish Reddy Solipuram — home">Aashish<span aria-hidden="true">.</span></a>
     <ul>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#work">Work</a></li>
+      <li><a href="#work">Projects</a></li>
       <li class="hide-sm"><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-<main class="wrap">
+<main class="wrap" id="main-content" tabindex="-1">
 
   <header>
-    <div class="eyebrow"><span class="dot"></span>Open to full-time roles · Jan 2027</div>
+    <div class="eyebrow"><span class="dot" aria-hidden="true"></span>Open to full-time roles · Jan 2027</div>
     <h1>Aashish Reddy<br>Solipuram</h1>
-    <p class="lede">Software engineer working where <strong>enterprise systems</strong>, <strong>cloud</strong> and <strong>applied AI</strong> meet. Formerly at Amazon. Now finishing an MS in Information Systems at Indiana University’s Kelley School of Business.</p>
+    <p class="lede">Software engineer working where <strong>enterprise systems</strong>, <strong>cloud</strong>, and <strong>applied AI</strong> meet. Formerly at Amazon. Now finishing an M.S. in Information Systems at Indiana University’s Kelley School of Business.</p>
     <div class="links">
       <a class="btn primary" href="mailto:aashishreddy792@gmail.com">Get in touch</a>
-      <a class="btn" href="https://www.linkedin.com/in/aashishreddy7" target="_blank" rel="noopener">LinkedIn ↗</a>
-      <a class="btn" href="https://github.com/aaresoli" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn" href="https://www.linkedin.com/in/aashishreddy7" target="_blank" rel="me noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="btn" href="https://github.com/aaresoli" target="_blank" rel="me noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
     </div>
   </header>
 
   <section class="about reveal" id="about">
-    <h2><b>01</b>About</h2>
-    <p>I build reliable systems and help organizations put them to work — from hardening <em>payment services</em> at Amazon to configuring an <em>SAP S/4HANA</em> digital core to shipping <em>agentic AI</em> platforms end to end.</p>
-    <p>I like problems that sit between the code and the business: where architecture, governance and real users all have to line up.</p>
-    <div class="stats">
-      <div class="stat"><div class="n">93%</div><div class="l">fewer daily socket errors on Amazon payment services</div></div>
-      <div class="stat"><div class="n">89.7%</div><div class="l">relevance accuracy on an AI job-matching platform I led</div></div>
-      <div class="stat"><div class="n">$7B</div><div class="l">manufacturer’s transformation roadmap across SAP &amp; Snowflake</div></div>
-    </div>
+    <h2><span class="section-number" aria-hidden="true">01</span>About</h2>
+    <p>I build reliable systems and help organizations put them to work — from hardening <em>payment services</em> at Amazon and configuring an <em>academic SAP S/4HANA</em> digital core to shipping an <em>applied-AI job platform</em> end to end.</p>
+    <p>I like problems that sit between the code and the business: where architecture, governance, and real users all have to line up.</p>
+    <dl class="stats">
+      <div class="stat"><dt class="n">≈93%</dt><dd class="l">reduction in daily socket exception errors on Amazon payment services</dd></div>
+      <div class="stat"><dt class="n">89.7%</dt><dd class="l">relevance accuracy on real job postings for an AI platform I led</dd></div>
+      <div class="stat"><dt class="n">$7B</dt><dd class="l">manufacturer studied in an academic SAP and Snowflake transformation roadmap</dd></div>
+    </dl>
   </section>
 
   <section class="reveal" id="experience">
-    <h2><b>02</b>Experience</h2>
+    <h2><span class="section-number" aria-hidden="true">02</span>Experience</h2>
 
     <div class="item">
-      <div class="when">May – Aug 2026</div>
+      <div class="when"><time datetime="2026-05">May</time> – <time datetime="2026-08">Aug 2026</time></div>
       <div>
         <h3>Kelley HOPE</h3>
         <div class="role">Technical Consultant · Bloomington, IN</div>
-        <ul>
-          <li>Led a <b>5-person team</b> as technical lead to scope, build and hand off an AI job-discovery platform for Graduate Career Services.</li>
-          <li>Built compliant pipelines to ingest, deduplicate, classify and rank jobs from public ATS platforms; shaped LinkedIn and Handshake sourcing through Terms of Service analysis.</li>
-          <li>Delivered explainable matching across five MSIS concentrations with <b>89.7% relevance accuracy</b>, plus training and runbooks so the client runs it independently.</li>
+        <ul class="details">
+          <li>Led a <b>5-person team</b> as technical lead to scope, build, and hand off an AI job-discovery platform for Graduate Career Services.</li>
+          <li>Built compliant pipelines to ingest, deduplicate, classify, and rank jobs from public ATS platforms; shaped LinkedIn and Handshake sourcing through Terms of Service analysis.</li>
+          <li>Delivered explainable matching across five MSIS concentrations with <b>89.7% relevance accuracy</b>, plus training and runbooks enabling independent operation by Graduate Career Services.</li>
         </ul>
-        <div class="tags"><span class="tag">Next.js</span><span class="tag">FastAPI</span><span class="tag">LangGraph</span><span class="tag">pgvector</span><span class="tag">Celery</span><span class="tag">Redis</span></div>
+        <ul class="tags" aria-label="Technologies used at Kelley HOPE"><li class="tag">Next.js</li><li class="tag">FastAPI</li><li class="tag">LangGraph</li><li class="tag">PostgreSQL / pgvector</li><li class="tag">Celery</li><li class="tag">Redis</li></ul>
       </div>
     </div>
 
     <div class="item">
-      <div class="when">Jul – Dec 2023</div>
+      <div class="when"><time datetime="2023-07">Jul</time> – <time datetime="2023-12">Dec 2023</time></div>
       <div>
         <h3>Amazon</h3>
         <div class="role">Software Development Engineer · Bengaluru, India</div>
-        <ul>
+        <ul class="details">
           <li>Raised the <b>service resilience score by 20 points</b> by designing stress and chaos-testing scenarios for AWS-based payment services and validating recovery under load.</li>
           <li>Cut daily socket exception errors from <b>30–40 to 2–3</b> by analyzing failure patterns and tuning socket configurations.</li>
           <li>Built backend support for Hard Decline payment messaging, mapping warning codes to localized customer-facing strings.</li>
         </ul>
-        <div class="tags"><span class="tag">AWS</span><span class="tag">Java</span><span class="tag">Chaos testing</span><span class="tag">Payments</span></div>
+        <ul class="tags" aria-label="Technologies used at Amazon"><li class="tag">AWS</li><li class="tag">Java</li><li class="tag">Chaos testing</li><li class="tag">Payments</li></ul>
       </div>
     </div>
   </section>
 
   <section class="reveal" id="work">
-    <h2><b>03</b>Selected work</h2>
+    <h2><span class="section-number" aria-hidden="true">03</span>Selected projects</h2>
 
     <div class="item">
-      <div class="when">Aug 2026 – Now</div>
+      <div class="when"><time datetime="2026-08">Aug 2026</time> – Present</div>
       <div>
         <h3>Multi-Brand Generative AI Governance</h3>
-        <div class="role">Marriott International × Accenture · Capstone</div>
-        <ul>
+        <div class="role">Graduate capstone for Marriott International with Accenture</div>
+        <ul class="details">
           <li>Designing AI brand and IP governance, with an MCP server that resolves Global → Brand → Region → Property brand rules.</li>
-          <li>Architecting BrandVoice Studio, featuring an LLM-as-judge <b>Brand Fidelity Gate</b> that routes drafts to pass, review or block.</li>
+          <li>Architecting BrandVoice Studio, featuring an LLM-as-judge <b>Brand Fidelity Gate</b> that routes drafts to pass, review, or block.</li>
         </ul>
-        <div class="tags"><span class="tag">Claude</span><span class="tag">LangGraph</span><span class="tag">MCP</span><span class="tag">FastAPI</span><span class="tag">pgvector</span></div>
+        <ul class="tags" aria-label="Technologies used for the AI governance capstone"><li class="tag">Claude</li><li class="tag">LangGraph</li><li class="tag">MCP</li><li class="tag">FastAPI</li><li class="tag">pgvector</li></ul>
       </div>
     </div>
 
     <div class="item">
-      <div class="when">Apr – May 2026</div>
+      <div class="when"><time datetime="2026-04">Apr</time> – <time datetime="2026-05">May 2026</time></div>
       <div>
         <h3>SAP S/4HANA Digital Core</h3>
-        <div class="role">Global healthcare manufacturer</div>
-        <ul>
-          <li>Configured an integrated S/4HANA architecture spanning Finance, Procurement, Manufacturing, Supply Chain and Sales across multiple countries.</li>
-          <li>Developed business blueprints, MRP-enabled supply chain workflows and BOM/routing structures.</li>
+        <div class="role">Academic project · Global healthcare manufacturer</div>
+        <ul class="details">
+          <li>Configured an integrated S/4HANA architecture spanning Finance, Procurement, Manufacturing, Supply Chain, and Sales across multiple countries.</li>
+          <li>Developed business blueprints, MRP-enabled supply chain workflows, and BOM/routing structures.</li>
         </ul>
-        <div class="tags"><span class="tag">SAP S/4HANA</span><span class="tag">MRP</span><span class="tag">FI / MM / PP / SD</span></div>
+        <ul class="tags" aria-label="Technologies used for the SAP project"><li class="tag">SAP S/4HANA</li><li class="tag">MRP</li><li class="tag">FI / MM / PP / SD</li></ul>
       </div>
     </div>
 
     <div class="item">
-      <div class="when">Nov – Dec 2025</div>
+      <div class="when"><time datetime="2025-11">Nov</time> – <time datetime="2025-12">Dec 2025</time></div>
       <div>
         <h3>Enterprise Transformation &amp; Financial Intelligence</h3>
-        <div class="role">$7B manufacturing enterprise</div>
-        <ul>
-          <li>Built a transformation roadmap unifying SAP S/4HANA, Snowflake and identity platforms to reduce system fragmentation.</li>
-          <li>Designed a financial intelligence architecture for real-time, <b>SOX-compliant</b> reporting and a faster close.</li>
+        <div class="role">Academic strategy project · $7B manufacturing enterprise</div>
+        <ul class="details">
+          <li>Built a transformation roadmap unifying SAP S/4HANA, Snowflake, and identity platforms to reduce system fragmentation.</li>
+          <li>Designed a financial intelligence architecture for real-time, <b>SOX-aligned</b> reporting to support a faster close.</li>
         </ul>
-        <div class="tags"><span class="tag">SAP</span><span class="tag">Snowflake</span><span class="tag">IT Strategy</span><span class="tag">Governance</span></div>
+        <ul class="tags" aria-label="Technologies used for the transformation project"><li class="tag">SAP</li><li class="tag">Snowflake</li><li class="tag">IT Strategy</li><li class="tag">Governance</li></ul>
       </div>
     </div>
 
     <div class="item">
-      <div class="when">Jul – Oct 2024</div>
+      <div class="when"><time datetime="2024-07">Jul</time> – <time datetime="2024-10">Oct 2024</time></div>
       <div>
-        <h3>Real-Time Social Platform</h3>
-        <div class="role">Full-stack build</div>
-        <ul>
-          <li>Feeds, DMs, notifications and media uploads, with Redis-backed real-time SSE, trending and rate limits.</li>
-          <li>Shared Zod contracts, Docker deployment and CI with backend, frontend and Playwright tests.</li>
+        <h3>Real-Time Social Media Platform</h3>
+        <div class="role">Full-stack academic project</div>
+        <ul class="details">
+          <li>Built feeds, DMs, notifications, and media uploads, with Redis-backed real-time SSE, trending, and rate limits.</li>
+          <li>Implemented shared Zod contracts, Docker deployment, and CI with backend, frontend, and Playwright tests.</li>
         </ul>
-        <div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Express</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span></div>
+        <ul class="tags" aria-label="Technologies used for the social platform"><li class="tag">React</li><li class="tag">TypeScript</li><li class="tag">Express</li><li class="tag">Prisma</li><li class="tag">PostgreSQL</li></ul>
       </div>
     </div>
   </section>
 
   <section class="reveal" id="education">
-    <h2><b>04</b>Education</h2>
+    <h2><span class="section-number" aria-hidden="true">04</span>Education</h2>
     <div class="item">
-      <div class="when">Dec 2026</div>
+      <div class="when"><time datetime="2026-12">Dec 2026</time></div>
       <div>
         <h3>Indiana University — Kelley School of Business</h3>
-        <div class="role">MS Information Systems · Digital Enterprise Systems &amp; AI · GPA 3.7</div>
+        <div class="role">M.S. in Information Systems · Digital Enterprise Systems and AI · GPA 3.7/4.0</div>
       </div>
     </div>
     <div class="item">
-      <div class="when">May 2024</div>
+      <div class="when"><time datetime="2024-05">May 2024</time></div>
       <div>
         <h3>BITS Pilani — Hyderabad</h3>
-        <div class="role">BE Electronics &amp; Instrumentation · Minor in Computing &amp; Intelligence</div>
+        <div class="role">B.E. in Electronics and Instrumentation · Minor in Computing and Intelligence</div>
       </div>
     </div>
   </section>
 
   <section class="reveal" id="skills">
-    <h2><b>05</b>Toolkit</h2>
+    <h2><span class="section-number" aria-hidden="true">05</span>Toolkit</h2>
     <dl class="skills">
       <dt>Languages</dt><dd>Python, TypeScript, Java, C++, Scala</dd>
       <dt>AI &amp; Backend</dt><dd>LangGraph, MCP, FastAPI, Express, PostgreSQL, pgvector, Redis, Celery</dd>
-      <dt>Frontend</dt><dd>React, Next.js, Playwright</dd>
+      <dt>Web &amp; Testing</dt><dd>React, Next.js, Playwright</dd>
       <dt>Enterprise</dt><dd>SAP S/4HANA, Snowflake, UiPath, n8n, Tableau</dd>
-      <dt>Cloud</dt><dd>AWS, Docker, Spark, Git</dd>
+      <dt>Cloud, Data &amp; DevOps</dt><dd>AWS, Docker, Spark, Git</dd>
     </dl>
   </section>
 
   <section class="contact reveal" id="contact">
-    <h2><b>06</b>Contact</h2>
-    <h3><a href="mailto:aashishreddy792@gmail.com">aashishreddy792@gmail.com</a></h3>
-    <p>Looking for software engineering, enterprise systems and technology consulting roles starting early 2027. Happy to chat.</p>
+    <h2><span class="section-number" aria-hidden="true">06</span>Contact</h2>
+    <address class="contact-email"><a href="mailto:aashishreddy792@gmail.com">aashishreddy792@gmail.com</a></address>
+    <p>Looking for software engineering, enterprise systems, and technology consulting roles starting early 2027. Happy to chat.</p>
   </section>
-
-  <footer>
-    <span>© 2026 Aashish Reddy Solipuram</span>
-    <span>Bloomington, Indiana</span>
-  </footer>
 </main>
 
+<footer>
+  <div class="wrap">
+    <span>© 2026 Aashish Reddy Solipuram</span>
+    <span>Bloomington, Indiana</span>
+  </div>
+</footer>
+
 <script>
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-  }), { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  const revealElements = document.querySelectorAll(".reveal");
+  const showAll = () => revealElements.forEach(element => element.classList.add("in"));
+
+  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    showAll();
+  } else {
+    try {
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          observer.unobserve(entry.target);
+        }
+      }), { threshold: 0.08 });
+      revealElements.forEach(element => observer.observe(element));
+    } catch {
+      showAll();
+    }
+  }
 </script>
 </body>
 </html>
