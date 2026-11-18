@@ -33,6 +33,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script>document.documentElement.classList.add("js");</script>
 <script type="application/ld+json">
 {
@@ -175,35 +176,40 @@
 
   /* Swimlane diagram. Each element sets --along (position on the time axis) and --across (its lanes);
      on wide screens time runs left to right, on phones it runs top to bottom. */
-  .pool { margin-top: clamp(48px, 6vw, 72px); }
+  /* Every box sits the same 8px inside its lane band, so top, bottom, and side edges line up across the grid.
+     Lanes have one fixed height, and box text is always top-aligned: date, name, then what it was. */
+  .pool { margin-top: clamp(48px, 6vw, 72px); --inset: 8px; }
   .lanes-grid {
-    display: grid; gap: 6px 8px;
-    grid-template-columns: 148px repeat(6, minmax(0, 1fr));
-    grid-template-rows: auto repeat(3, minmax(84px, auto));
+    display: grid; column-gap: 0; row-gap: 6px;
+    grid-template-columns: 136px repeat(6, minmax(0, 1fr));
+    grid-template-rows: auto repeat(3, minmax(128px, auto));
   }
   .lanes-grid > * { grid-column: var(--along); grid-row: var(--across); min-width: 0; }
-  .band { background: var(--lane); border-radius: 6px; }
-  .lane-name {
-    align-self: center; padding: 0 14px;
-    font: 600 14px/1.25 var(--display);
-  }
+  .band { background: var(--lane); border-radius: 8px; }
+  .lane-name { align-self: center; padding: 0 16px; font: 650 14px/1.25 var(--display); }
   .year {
-    border-left: 1px dashed var(--rule); padding: 0 0 10px 10px;
-    font: 600 13px/1 var(--display); color: var(--faint); font-variant-numeric: tabular-nums;
+    margin: 0 calc(var(--inset) / 2) 4px; padding-bottom: 8px; border-bottom: 1.5px solid var(--rule);
+    font: 650 13px/1 var(--display); color: var(--muted); font-variant-numeric: tabular-nums;
   }
+  .year.first { margin-left: var(--inset); }
+  .year.last { margin-right: var(--inset); }
   .node {
-    position: relative; z-index: 1; margin: 8px 0;
-    display: flex; flex-direction: column; justify-content: center; gap: 3px;
-    padding: 10px 12px; border: 1.5px solid var(--crimson); border-radius: 8px;
-    background: var(--paper); text-decoration: none;
+    position: relative; z-index: 1;
+    margin: var(--inset) calc(var(--inset) / 2);
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 12px 12px 14px; border: 1.5px solid var(--crimson); border-radius: 6px;
+    background: color-mix(in srgb, var(--crimson) 6%, var(--paper));
+    text-decoration: none; overflow-wrap: break-word;
     transition: background-color .15s, color .15s;
     animation: node-in .45s cubic-bezier(.2, .7, .2, 1) both;
     animation-delay: calc(var(--i) * 90ms + 120ms);
   }
-  .node strong { font: 650 14.5px/1.2 var(--display); }
-  .node span { font: 400 12.5px/1.25 var(--display); color: var(--muted); font-variant-numeric: tabular-nums; }
+  .lanes-grid > .node:last-child { margin-right: var(--inset); }
+  .node .d { font: 500 12px/1.2 var(--display); color: var(--muted); font-variant-numeric: tabular-nums; }
+  .node strong { font: 650 15px/1.2 var(--display); letter-spacing: -.005em; }
+  .node .k { font: 400 13px/1.3 var(--display); color: var(--muted); }
   .node:hover, .node:focus-visible { background: var(--crimson); color: var(--on-crimson); }
-  .node:hover span, .node:focus-visible span { color: inherit; }
+  .node:hover .d, .node:hover .k, .node:focus-visible .d, .node:focus-visible .k { color: inherit; }
   @keyframes node-in { from { opacity: 0; transform: translateX(-10px); } }
   .pool figcaption { margin-top: 14px; font: 400 14px/1.5 var(--display); color: var(--muted); max-width: 60ch; }
 
@@ -264,7 +270,32 @@
     .node { animation: none; }
   }
 
-  /* Phones: the diagram turns so time runs down the page and the lanes become columns. */
+  /* Below 1000px the diagram turns so time runs down the page and the lanes become columns. */
+  @media (max-width: 1000px) {
+    .pool { --inset: 5px; }
+    .lanes-grid {
+      column-gap: 4px; row-gap: 0;
+      grid-template-columns: 38px repeat(3, minmax(0, 1fr));
+      grid-template-rows: auto repeat(6, auto);
+    }
+    .lanes-grid > * { grid-column: var(--across); grid-row: var(--along); }
+    .lane-name { align-self: end; padding: 10px 4px; font-size: 12px; text-align: center; }
+    .year, .year.first {
+      margin: calc(var(--inset) / 2) 6px calc(var(--inset) / 2) 0; padding: 4px 0 0;
+      border-bottom: 0; border-right: 1.5px solid var(--rule); font-size: 12px;
+    }
+    .year.first { margin-top: var(--inset); }
+    .node, .lanes-grid > .node:last-child { margin: calc(var(--inset) / 2) var(--inset); padding: 9px 9px 11px; gap: 3px; }
+    .node { hyphens: auto; -webkit-hyphens: auto; }
+    .lanes-grid > .node:nth-of-type(1) { margin-top: var(--inset); }
+    .lanes-grid > .node:last-child { margin-bottom: var(--inset); }
+    .node strong { font-size: 13.5px; }
+    .node .d { font-size: 11.5px; }
+    .node .k { font-size: 12px; }
+    .node .y { display: none; }
+    @keyframes node-in { from { opacity: 0; transform: translateY(-8px); } }
+  }
+
   @media (max-width: 720px) {
     body { font-size: 16.5px; }
     .wrap {
@@ -275,22 +306,17 @@
     .site-nav ul .hide-sm { display: none; }
     .mark { font-size: 15px; font-stretch: 105%; }
 
-    .lanes-grid {
-      gap: 6px 5px;
-      grid-template-columns: 40px repeat(3, minmax(0, 1fr));
-      grid-template-rows: auto repeat(6, minmax(62px, auto));
-    }
-    .lanes-grid > * { grid-column: var(--across); grid-row: var(--along); }
-    .lane-name { align-self: end; padding: 8px 6px 10px; font-size: 12.5px; text-align: center; }
-    .year { border-left: 0; border-top: 1px dashed var(--rule); padding: 8px 0 0; font-size: 12px; }
-    .node { margin: 0 4px; padding: 8px 8px; border-radius: 7px; }
-    .node strong { font-size: 13px; }
-    .node span { font-size: 11.5px; }
-    @keyframes node-in { from { opacity: 0; transform: translateY(-8px); } }
-
     h2 { margin-bottom: 28px; }
     .list { gap: 44px; }
     .entry-head { flex-direction: column; }
+  }
+  @media (max-width: 520px) {
+    .lanes-grid { grid-template-columns: 30px repeat(3, minmax(0, 1fr)); column-gap: 3px; }
+    .node, .lanes-grid > .node:last-child { padding: 8px 7px 10px; margin-left: 3px; margin-right: 3px; }
+    .node strong, .node .k, .node .d { font-stretch: 78%; }
+    .node strong { font-size: 14px; }
+    .node .k { font-size: 12.5px; }
+    .lane-name { font-stretch: 85%; }
   }
   @media (max-width: 360px) {
     .mark { display: none; }
@@ -346,21 +372,21 @@
         <div class="band" style="--along: 1 / -1; --across: 3" aria-hidden="true"></div>
         <div class="band" style="--along: 1 / -1; --across: 4" aria-hidden="true"></div>
 
-        <div class="year" style="--along: 2; --across: 1 / -1" aria-hidden="true">2023</div>
-        <div class="year" style="--along: 3; --across: 1 / -1" aria-hidden="true">2024</div>
-        <div class="year" style="--along: 4; --across: 1 / -1" aria-hidden="true">2025</div>
-        <div class="year" style="--along: 5 / 8; --across: 1 / -1" aria-hidden="true">2026</div>
+        <div class="year first" style="--along: 2; --across: 1" aria-hidden="true">2023</div>
+        <div class="year" style="--along: 3; --across: 1" aria-hidden="true">2024</div>
+        <div class="year" style="--along: 4; --across: 1" aria-hidden="true">2025</div>
+        <div class="year last" style="--along: 5 / 8; --across: 1" aria-hidden="true">2026</div>
 
         <div class="lane-name" style="--along: 1; --across: 2" aria-hidden="true">Enterprise systems</div>
         <div class="lane-name" style="--along: 1; --across: 3" aria-hidden="true">Software &amp; cloud</div>
         <div class="lane-name" style="--along: 1; --across: 4" aria-hidden="true">Applied AI</div>
 
-        <a class="node" href="#amazon" style="--along: 2; --across: 3; --i: 0" aria-label="Amazon, July to December 2023. Software and cloud."><strong>Amazon</strong><span>Jul – Dec 2023</span></a>
-        <a class="node" href="#social" style="--along: 3; --across: 3; --i: 1" aria-label="Real-time social platform, July to October 2024. Software and cloud."><strong>Social app</strong><span>Jul – Oct 2024</span></a>
-        <a class="node" href="#toyota" style="--along: 4; --across: 2 / 4; --i: 2" aria-label="Toyota Material Handling, November to December 2025. Enterprise systems, software and cloud."><strong>Toyota</strong><span>Nov – Dec 2025</span></a>
-        <a class="node" href="#sap" style="--along: 5; --across: 2; --i: 3" aria-label="SAP S/4HANA configuration, April to May 2026. Enterprise systems."><strong>SAP S/4HANA</strong><span>Apr – May 2026</span></a>
-        <a class="node" href="#hope" style="--along: 6; --across: 3 / 5; --i: 4" aria-label="Kelley HOPE, May to August 2026. Software and cloud, applied AI."><strong>Kelley HOPE</strong><span>May – Aug 2026</span></a>
-        <a class="node" href="#marriott" style="--along: 7; --across: 4; --i: 5" aria-label="Marriott claim verification, August 2026 to now. Applied AI."><strong>Marriott</strong><span>Aug 2026 – now</span></a>
+        <a class="node" href="#amazon" style="--along: 2; --across: 3; --i: 0" aria-label="Amazon, payment services engineering, July to December 2023. Software and cloud."><span class="d">Jul – Dec<span class="y"> 2023</span></span><strong>Amazon</strong><span class="k">Payment services engineering</span></a>
+        <a class="node" href="#social" style="--along: 3; --across: 3; --i: 1" aria-label="Real-time social platform, full-stack web app, July to October 2024. Software and cloud."><span class="d">Jul – Oct<span class="y"> 2024</span></span><strong>Real-time social platform</strong><span class="k">Full-stack web app</span></a>
+        <a class="node" href="#toyota" style="--along: 4; --across: 2 / 4; --i: 2" aria-label="Toyota Material Handling, IT transformation roadmap, November to December 2025. Enterprise systems, software and cloud."><span class="d">Nov – Dec<span class="y"> 2025</span></span><strong>Toyota Material Handling</strong><span class="k">IT transformation roadmap</span></a>
+        <a class="node" href="#sap" style="--along: 5; --across: 2; --i: 3" aria-label="SAP S/4HANA digital core, ERP configuration, April to May 2026. Enterprise systems."><span class="d">Apr – May<span class="y"> 2026</span></span><strong>SAP S/4HANA digital core</strong><span class="k">ERP configuration</span></a>
+        <a class="node" href="#hope" style="--along: 6; --across: 3 / 5; --i: 4" aria-label="Kelley HOPE, AI job-discovery platform, May to August 2026. Software and cloud, applied AI."><span class="d">May – Aug<span class="y"> 2026</span></span><strong>Kelley HOPE</strong><span class="k">AI job-discovery platform</span></a>
+        <a class="node" href="#marriott" style="--along: 7; --across: 4; --i: 5" aria-label="Marriott AI claim verification, Accenture capstone, August 2026 to now. Applied AI."><span class="d">Aug<span class="y"> 2026</span> – now</span><strong>Marriott claim verification</strong><span class="k">AI agent, Accenture capstone</span></a>
       </div>
       <figcaption>Each box is a role or project, placed in the areas of work it covered. Select one to read about it.</figcaption>
     </figure>
@@ -398,7 +424,7 @@
             <li>Cut daily socket exceptions from <b>30–40 to 2–3</b> by tracing recurring failures and tuning socket configurations.</li>
             <li>Built backend support for Hard Decline payment messaging, mapping warning codes to localized customer-facing strings and testing them in sandbox and integration environments.</li>
           </ul>
-          <p class="stack">Worked on AWS-based payment services.</p>
+          <p class="stack">Worked with AWS, stress and chaos testing, and sandbox and integration environments.</p>
         </article>
 
       </div>
@@ -430,7 +456,7 @@
             <h3>SAP S/4HANA digital core configuration</h3>
             <p class="when"><time datetime="2026-04">Apr</time> – <time datetime="2026-05">May 2026</time></p>
           </div>
-          <p class="role">Kelley course project for a $1.15B diagnostics manufacturer</p>
+          <p class="role">Kelley academic project for a $1.15B diagnostics manufacturer</p>
           <p class="in-lanes"><span class="glyph" aria-hidden="true"><i class="on"></i><i></i><i></i></span>Enterprise systems</p>
           <ul class="details">
             <li>Configured SAP S/4HANA across US and Singapore plants and six global sales offices, covering FI/CO, MM, PP, SD, and HR with multi-currency accounting under local standards.</li>
@@ -450,7 +476,7 @@
             <li>Authored a multi-year transformation roadmap covering end-state architecture, Active Directory and collaboration-tool consolidation, and legacy rationalization.</li>
             <li>Designed a financial intelligence architecture unifying data across disparate ERPs on Snowflake with AI-assisted cleansing for <b>SOX-compliant</b> reporting; delivered a working prototype, cost-benefit analysis, and whitepaper.</li>
           </ul>
-          <p class="stack">Built with Snowflake, around an SAP S/4HANA end-state architecture.</p>
+          <p class="stack">Worked with Snowflake and SAP S/4HANA.</p>
         </article>
 
         <article class="entry" id="social">
@@ -458,7 +484,7 @@
             <h3>Real-time social media platform</h3>
             <p class="when"><time datetime="2024-07">Jul</time> – <time datetime="2024-10">Oct 2024</time></p>
           </div>
-          <p class="role">Personal full-stack project</p>
+          <p class="role">Full-stack project</p>
           <p class="in-lanes"><span class="glyph" aria-hidden="true"><i></i><i class="on"></i><i></i></span>Software &amp; cloud</p>
           <ul class="details">
             <li>Developed a full-stack social app supporting auth, feeds, posts, replies, likes, follows, direct messages, real-time notifications, and media uploads.</li>
