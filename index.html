@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Aashish Reddy Solipuram — Software Engineer</title>
-<meta name="description" content="Aashish Reddy Solipuram — software engineer in enterprise systems, cloud, and applied AI; M.S. candidate at Indiana University’s Kelley School of Business.">
+<meta name="description" content="Aashish Reddy Solipuram builds software across enterprise systems, cloud, and applied AI. Former Amazon software development engineer; M.S. in Information Systems at Indiana University’s Kelley School of Business, December 2026.">
 <link rel="canonical" href="https://aaresoli.github.io/">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#131211" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f5f6f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d1217" media="(prefers-color-scheme: dark)">
 <meta property="og:title" content="Aashish Reddy Solipuram — Software Engineer">
-<meta property="og:description" content="Software engineer working across enterprise systems, cloud, and applied AI.">
-<meta property="og:type" content="website">
+<meta property="og:description" content="Software engineer across enterprise systems, cloud, and applied AI. Former Amazon SDE; M.S. Information Systems at Indiana University Kelley, December 2026.">
+<meta property="og:type" content="profile">
+<meta property="profile:first_name" content="Aashish Reddy">
+<meta property="profile:last_name" content="Solipuram">
 <meta property="og:url" content="https://aaresoli.github.io/">
 <meta property="og:site_name" content="Aashish Reddy Solipuram">
 <meta property="og:locale" content="en_US">
@@ -20,18 +22,28 @@
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Aashish Reddy Solipuram — software engineer in enterprise systems, cloud, and applied AI.">
+<meta property="og:image:alt" content="Aashish Reddy Solipuram. Software engineer across enterprise systems, cloud, and applied AI.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Aashish Reddy Solipuram — Software Engineer">
-<meta name="twitter:description" content="Software engineer working across enterprise systems, cloud, and applied AI.">
+<meta name="twitter:description" content="Software engineer across enterprise systems, cloud, and applied AI. Former Amazon SDE; M.S. Information Systems at Indiana University Kelley.">
 <meta name="twitter:image" content="https://aaresoli.github.io/og.png">
-<meta name="twitter:image:alt" content="Aashish Reddy Solipuram — software engineer in enterprise systems, cloud, and applied AI.">
+<meta name="twitter:image:alt" content="Aashish Reddy Solipuram. Software engineer across enterprise systems, cloud, and applied AI.">
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preload" href="assets/fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
-<script>document.documentElement.classList.add("js");</script>
+<link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+  // Apply the focus from the URL before first paint so the page never flashes the wrong view.
+  (function () {
+    var d = document.documentElement;
+    d.classList.add("js");
+    try {
+      var f = new URLSearchParams(location.search).get("focus");
+      if (f === "swe" || f === "erp" || f === "consulting") d.setAttribute("data-focus", f);
+    } catch (e) {}
+  })();
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -39,6 +51,12 @@
   "name": "Aashish Reddy Solipuram",
   "url": "https://aaresoli.github.io/",
   "jobTitle": "Software Engineer",
+  "address": { "@type": "PostalAddress", "addressLocality": "Bloomington", "addressRegion": "IN", "addressCountry": "US" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Indiana University Kelley School of Business" },
+    { "@type": "CollegeOrUniversity", "name": "BITS Pilani, Hyderabad Campus" }
+  ],
+  "knowsAbout": ["Software engineering", "SAP S/4HANA", "Enterprise systems", "AWS", "Applied AI", "LangGraph", "FastAPI", "Snowflake"],
   "sameAs": [
     "https://www.linkedin.com/in/aashishreddy7",
     "https://github.com/aaresoli"
@@ -47,199 +65,255 @@
 </script>
 <style>
   @font-face {
-    font-family: "Instrument Serif";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url("assets/fonts/instrument-serif-regular.woff2") format("woff2");
-  }
-  @font-face {
-    font-family: "Instrument Serif";
-    font-style: italic;
-    font-weight: 400;
-    font-display: swap;
-    src: url("assets/fonts/instrument-serif-italic.woff2") format("woff2");
-  }
-  @font-face {
-    font-family: "Inter";
+    font-family: "Archivo";
     font-style: normal;
     font-weight: 100 900;
+    font-stretch: 62% 125%;
     font-display: swap;
-    src: url("assets/fonts/inter-latin.woff2") format("woff2");
+    src: url("assets/fonts/archivo-latin.woff2") format("woff2");
   }
   @font-face {
-    font-family: "JetBrains Mono";
+    font-family: "Source Serif 4";
     font-style: normal;
-    font-weight: 400;
+    font-weight: 200 900;
     font-display: swap;
-    src: url("assets/fonts/jetbrains-mono-latin.woff2") format("woff2");
+    src: url("assets/fonts/source-serif-4-latin.woff2") format("woff2");
   }
 
+  /* Layout: a wide expanded-grotesk nameplate, then a two-column record (dates, place and outcome on the left, the work on the right). */
   :root {
-    --bg: #f7f5f0;
-    --fg: #1b1a17;
-    --muted: #6d6a62;
-    --faint: #736f67;
-    --rule: #e3dfd5;
-    --accent: #990000;
-    --chip: #efebe2;
-    --selection-fg: #fff;
-    --serif: "Instrument Serif", Georgia, serif;
-    --sans: "Inter", system-ui, -apple-system, Segoe UI, sans-serif;
-    --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+    --paper: #f5f6f8;
+    --ink: #111922;
+    --muted: #4f5a67;
+    --faint: #66707c;
+    --rule: #dbe0e6;
+    --wash: #e9edf1;
+    --crimson: #990000;
+    --on-ink: #f5f6f8;
+    --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --text: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+    --meta-col: 200px;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #131211;
-      --fg: #ece8df;
-      --muted: #9b968b;
-      --faint: #878279;
-      --rule: #2a2825;
-      --accent: #e0645c;
-      --chip: #1f1d1b;
-      --selection-fg: #131211;
+      --paper: #0d1217;
+      --ink: #e5e9ee;
+      --muted: #a3adb8;
+      --faint: #8d98a4;
+      --rule: #232c36;
+      --wash: #17202a;
+      --crimson: #f0716f;
+      --on-ink: #0d1217;
     }
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; color-scheme: light dark; }
-  body {
-    background: var(--bg);
-    color: var(--fg);
-    font: 400 16px/1.65 var(--sans);
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: inherit; text-decoration: none; }
-  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
-  ::selection { background: var(--accent); color: var(--selection-fg); }
 
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { color-scheme: light dark; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 17px/1.6 var(--text);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: inherit; }
+  button { font: inherit; color: inherit; }
+  :focus-visible { outline: 2px solid var(--crimson); outline-offset: 3px; border-radius: 2px; }
+  ::selection { background: var(--ink); color: var(--on-ink); }
+  h1, h2, h3, .ui { font-family: var(--display); }
+  h1, h2, h3 { text-wrap: balance; }
+
+  .wrap {
+    max-width: 1080px; margin: 0 auto;
+    padding-left: max(24px, env(safe-area-inset-left, 0px));
+    padding-right: max(24px, env(safe-area-inset-right, 0px));
+  }
   .skip-link {
     position: fixed; top: 10px; left: 10px; z-index: 100;
-    padding: 9px 14px; border-radius: 8px; background: var(--fg); color: var(--bg);
-    font-size: 14px; font-weight: 600; transform: translateY(-160%);
+    padding: 10px 14px; border-radius: 4px; background: var(--ink); color: var(--on-ink);
+    font: 600 14px/1 var(--display); text-decoration: none; transform: translateY(-200%);
   }
-  .skip-link:focus { transform: translateY(0); }
+  .skip-link:focus { transform: none; }
   .sr-only {
     position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
     overflow: hidden; white-space: nowrap; border: 0;
   }
 
-  nav {
+  /* Navigation */
+  .site-nav {
     position: sticky; top: 0; z-index: 10;
-    background: var(--bg);
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: saturate(1.4) blur(10px);
+    -webkit-backdrop-filter: saturate(1.4) blur(10px);
     border-bottom: 1px solid var(--rule);
+    padding-top: env(safe-area-inset-top, 0px);
   }
-  nav .wrap { display: flex; justify-content: space-between; align-items: center; min-height: 60px; }
-  .mark { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--serif); font-size: 22px; }
-  .mark span { color: var(--accent); }
-  nav ul { display: flex; gap: 22px; list-style: none; font-size: 14px; color: var(--muted); }
-  nav ul a { display: inline-flex; align-items: center; min-height: 44px; }
-  nav ul a:hover, nav ul a:focus-visible { color: var(--fg); }
+  .site-nav .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 56px; }
+  .mark {
+    white-space: nowrap;
+    font: 700 16px/1 var(--display); font-stretch: 118%; letter-spacing: -.01em;
+    text-decoration: none; display: inline-flex; align-items: center; min-height: 44px;
+  }
+  .site-nav ul { display: flex; gap: 24px; list-style: none; font: 500 14px/1 var(--display); }
+  .site-nav ul a { display: inline-flex; align-items: center; min-height: 44px; color: var(--muted); text-decoration: none; }
+  .site-nav ul a:hover { color: var(--ink); }
 
-  header { padding: 96px 0 72px; }
-  .eyebrow {
-    font: 400 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase;
-    color: var(--muted); display: flex; align-items: center; gap: 10px;
+  /* Nameplate */
+  .hero { padding-block: clamp(56px, 9vw, 112px) clamp(48px, 7vw, 80px); }
+  .status { font: 500 14px/1.4 var(--display); color: var(--muted); display: flex; align-items: center; gap: 10px; }
+  .status::before {
+    content: ""; width: 8px; height: 8px; border-radius: 50%; flex: none;
+    background: #2f9e57; box-shadow: 0 0 0 3px color-mix(in srgb, #2f9e57 22%, transparent);
   }
-  .dot { width: 7px; height: 7px; border-radius: 50%; background: #3fa65a; box-shadow: 0 0 0 4px color-mix(in srgb, #3fa65a 20%, transparent); }
   h1 {
-    font: 400 clamp(44px, 9vw, 72px)/1.02 var(--serif);
-    letter-spacing: -.01em; margin: 26px 0 26px;
+    font-weight: 800; font-stretch: 125%;
+    font-size: clamp(38px, 9.6vw, 112px); line-height: .92; letter-spacing: -.035em;
+    margin-top: 28px;
   }
-  h1 em { color: var(--accent); }
-  .lede { font-size: 18px; color: var(--muted); max-width: 560px; }
-  .lede strong { color: var(--fg); font-weight: 500; }
-  .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; }
-  .btn {
+  h1 span { display: block; }
+  .hero-grid {
+    display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 32px 64px;
+    margin-top: clamp(32px, 4.5vw, 52px); padding-top: 28px; border-top: 2px solid var(--ink);
+  }
+  .lede { font-size: clamp(19px, 2vw, 22px); line-height: 1.5; max-width: 34em; }
+  .facts { display: grid; gap: 14px; align-content: start; font-family: var(--display); }
+  .facts div { display: grid; gap: 2px; }
+  .facts dt { font: 500 13px/1.3 var(--display); color: var(--faint); }
+  .facts dd { font: 500 15px/1.4 var(--display); }
+
+  .focus { margin-top: 36px; display: none; }
+  .js .focus { display: block; }
+  .focus-label { font: 600 14px/1.3 var(--display); }
+  .focus-hint { font: 400 14px/1.4 var(--display); color: var(--muted); margin-top: 2px; }
+  .focus-options { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .focus-options button {
+    font: 500 14px/1 var(--display); min-height: 40px; padding: 0 14px;
+    border: 1px solid var(--rule); border-radius: 4px; background: var(--paper); cursor: pointer;
+    transition: border-color .15s, background-color .15s, color .15s;
+  }
+  .focus-options button:hover { border-color: var(--ink); }
+  .focus-options button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--on-ink); }
+
+  .actions { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 32px; font: 600 15px/1 var(--display); }
+  .actions a {
     display: inline-flex; align-items: center; min-height: 44px;
-    font-size: 14px; padding: 9px 16px; border-radius: 999px;
-    border: 1px solid var(--faint); transition: border-color .2s, background .2s;
+    text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px;
+    text-decoration-color: var(--faint);
   }
-  .btn:hover, .btn:focus-visible { border-color: var(--fg); }
-  .btn.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
-  .btn.primary:hover, .btn.primary:focus-visible { opacity: .88; }
+  .actions a:hover { text-decoration-color: var(--crimson); color: var(--crimson); }
 
-  section { padding: 56px 0; border-top: 1px solid var(--rule); scroll-margin-top: 60px; }
+  /* Sections */
+  section { padding-block: 64px; border-top: 1px solid var(--rule); scroll-margin-top: 56px; }
   h2 {
-    font: 400 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase;
-    color: var(--muted); margin-bottom: 32px;
+    font-weight: 700; font-stretch: 112%; font-size: clamp(26px, 3.2vw, 34px);
+    line-height: 1.1; letter-spacing: -.02em; margin-bottom: 40px;
   }
-  h2 .section-number { color: var(--accent); margin-right: 8px; }
+  .list { display: flex; flex-direction: column; gap: 48px; }
+  .item { display: grid; grid-template-columns: var(--meta-col) minmax(0, 1fr); gap: 8px 48px; }
+  .item[hidden] { display: none; }
+  .meta { display: flex; flex-direction: column; gap: 4px; font-family: var(--display); }
+  .when { font: 600 14px/1.4 var(--display); font-variant-numeric: tabular-nums; }
+  .where { font: 400 14px/1.4 var(--display); color: var(--muted); }
+  .result { margin-top: 14px; display: grid; gap: 4px; }
+  .fig { font: 700 30px/1 var(--display); font-stretch: 110%; letter-spacing: -.02em; color: var(--crimson); font-variant-numeric: tabular-nums; }
+  .cap { font: 400 13px/1.4 var(--display); color: var(--muted); max-width: 20ch; }
+  .body { min-width: 0; max-width: 680px; }
+  h3 { font-weight: 650; font-stretch: 100%; font-size: 21px; line-height: 1.25; letter-spacing: -.01em; }
+  .role { font: 500 15px/1.4 var(--display); color: var(--muted); margin-top: 4px; }
+  .details { list-style: none; margin-top: 14px; display: grid; gap: 10px; }
+  .details li { position: relative; padding-left: 20px; }
+  .details li::before {
+    content: ""; position: absolute; left: 2px; top: .72em;
+    width: 8px; height: 2px; background: var(--faint);
+  }
+  .details b { font-weight: 650; white-space: nowrap; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin-top: 16px; }
+  .tags li { font: 500 13px/1 var(--display); padding: 6px 8px; border-radius: 3px; background: var(--wash); color: var(--muted); }
+  .coursework { margin-top: 12px; font-size: 15px; color: var(--muted); }
+  .coursework strong { font: 600 14px/1 var(--display); color: var(--ink); margin-right: 4px; }
 
-  .about p { font-family: var(--serif); font-size: 25px; line-height: 1.4; }
-  .about p + p { margin-top: 18px; }
-  .about em { color: var(--accent); }
+  .filter-note { font: 400 14px/1.5 var(--display); color: var(--muted); margin-top: 40px; }
+  .filter-note button {
+    background: none; border: 0; padding: 0; cursor: pointer; font-weight: 600; color: var(--ink);
+    text-decoration: underline; text-underline-offset: 4px;
+  }
 
-  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; margin-top: 40px; }
-  .stat { background: var(--bg); padding: 20px; }
-  .stat .n { font: 400 36px/1 var(--serif); }
-  .stat .l { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.4; }
+  /* Focus variants: without JS, only the general version shows. */
+  :root:not([data-focus]) .v:not(.all),
+  [data-focus="swe"] .v:not(.swe),
+  [data-focus="erp"] .v:not(.erp),
+  [data-focus="consulting"] .v:not(.consulting) { display: none; }
 
-  .item { display: grid; grid-template-columns: 150px 1fr; gap: 24px; }
-  .item + .item { margin-top: 44px; }
-  .when { font: 400 12.5px/1.7 var(--mono); color: var(--faint); padding-top: 3px; }
-  .item h3 { font-size: 17px; font-weight: 600; line-height: 1.4; }
-  .item .role { color: var(--muted); font-size: 15px; margin: 2px 0 12px; }
-  .details { list-style: none; }
-  .details li { position: relative; padding-left: 18px; color: var(--fg); font-size: 15px; }
-  .details li + li { margin-top: 8px; }
-  .details li::before { content: ""; position: absolute; left: 0; top: .78em; width: 8px; height: 1px; background: var(--faint); }
-  .details li b { font-weight: 600; }
-  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; list-style: none; }
-  .tag { font: 400 12px/1 var(--mono); padding: 6px 9px; border-radius: 6px; background: var(--chip); color: var(--muted); }
+  .skills { display: grid; grid-template-columns: var(--meta-col) minmax(0, 1fr); gap: 20px 48px; }
+  .skills dt { font: 600 15px/1.5 var(--display); }
+  .skills dd { max-width: 680px; }
 
-  .skills { display: grid; grid-template-columns: 150px 1fr; gap: 18px 24px; }
-  .skills dt { font: 400 12.5px/1.9 var(--mono); color: var(--faint); }
-  .skills dd { font-size: 15px; }
+  .contact-email {
+    font: 700 clamp(26px, 5.4vw, 56px)/1.05 var(--display); font-stretch: 112%; letter-spacing: -.025em;
+    font-style: normal; overflow-wrap: anywhere;
+  }
+  .contact-email a { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .14em; text-decoration-color: var(--rule); }
+  .contact-email a:hover { text-decoration-color: var(--crimson); }
+  .contact-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 24px; }
+  .copy {
+    display: none; font: 600 14px/1 var(--display); min-height: 40px; padding: 0 14px;
+    border: 1px solid var(--rule); border-radius: 4px; background: var(--paper); cursor: pointer;
+  }
+  .js .copy { display: inline-flex; align-items: center; }
+  .copy:hover { border-color: var(--ink); }
+  .contact p { color: var(--muted); max-width: 36em; }
+  .contact .actions { margin-top: 20px; }
 
-  .contact-email { font: 400 clamp(28px, 7vw, 54px)/1.1 var(--serif); margin-bottom: 18px; overflow-wrap: anywhere; }
-  .contact-email a { text-decoration: underline; text-decoration-color: var(--faint); text-decoration-thickness: 1px; text-underline-offset: .12em; transition: color .2s, text-decoration-color .2s; }
-  .contact-email a:hover, .contact-email a:focus-visible { color: var(--accent); text-decoration-color: var(--accent); }
-  .contact p { color: var(--muted); max-width: 520px; }
+  footer { font: 400 13px/1.4 var(--display); color: var(--faint); border-top: 1px solid var(--rule); }
+  footer .wrap { padding-block: 28px calc(40px + env(safe-area-inset-bottom, 0px)); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 
-  footer { font: 400 12px/1.4 var(--mono); color: var(--faint); }
-  footer .wrap { padding-top: 40px; padding-bottom: 56px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-
-  .reveal { opacity: 1; transform: none; }
-  .js .reveal { opacity: 0; transform: translateY(12px); transition: opacity .7s ease, transform .7s ease; }
-  .js .reveal.in { opacity: 1; transform: none; }
+  /* Reordering projects animates only when the person changes focus. */
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .22s; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .js .reveal { opacity: 1; transform: none; transition: none; }
+    ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
   }
 
-  @media (max-width: 640px) {
-    .wrap { padding: 0 16px; }
-    nav ul { gap: 12px; font-size: 13px; }
-    nav ul li.hide-sm { display: none; }
-    header { padding: 64px 0 48px; }
-    .about p { font-size: 21px; }
-    .item, .skills { grid-template-columns: 1fr; gap: 6px; }
-    .item + .item { margin-top: 36px; }
-    .skills dd { margin-bottom: 12px; }
-    .stats { grid-template-columns: 1fr; }
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .facts { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
   }
-
-  @media (max-width: 300px) {
+  @media (max-width: 720px) {
+    body { font-size: 16.5px; }
+    .wrap {
+      padding-left: max(16px, env(safe-area-inset-left, 0px));
+      padding-right: max(16px, env(safe-area-inset-right, 0px));
+    }
+    .site-nav ul { gap: 14px; }
+    .mark { font-size: 15px; font-stretch: 105%; }
+    .site-nav ul .hide-sm { display: none; }
+    section { padding-block: 48px; }
+    h2 { margin-bottom: 28px; }
+    .item, .skills { grid-template-columns: 1fr; }
+    .skills { gap: 4px; }
+    .skills dd { margin-bottom: 14px; }
+    .meta { flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+    .result { margin-top: 6px; width: 100%; grid-template-columns: auto 1fr; align-items: baseline; gap: 10px; }
+    .fig { font-size: 24px; }
+    .cap { max-width: none; }
+    .list { gap: 40px; }
+  }
+  @media (max-width: 360px) {
     .mark { display: none; }
-    nav ul { width: 100%; justify-content: space-between; }
+    .site-nav ul { width: 100%; justify-content: space-between; }
   }
 
   @media print {
-    @page { margin: .6in; }
-    :root {
-      --bg: #fff; --fg: #111; --muted: #444; --faint: #555;
-      --rule: #ccc; --accent: #750000; --chip: #f2f2f2;
-    }
-    nav, .skip-link { display: none; }
-    body { font-size: 11pt; background: #fff; }
-    .wrap { max-width: none; padding-right: 0; padding-left: 0; }
-    header { padding: 0 0 32px; }
-    h1 { font-size: 48px; }
-    section { padding: 30px 0; scroll-margin-top: 0; }
-    .js .reveal, .reveal { opacity: 1; transform: none; transition: none; }
-    .item, .stat, .skills, .contact { break-inside: avoid; }
-    footer .wrap { padding: 28px 0 0; }
+    @page { margin: .55in; }
+    :root { --paper: #fff; --ink: #000; --muted: #333; --faint: #555; --rule: #bbb; --wash: #eee; --crimson: #800000; }
+    body { font-size: 10.5pt; }
+    .site-nav, .skip-link, .focus, .copy, .filter-note, .hero .actions { display: none !important; }
+    .wrap { max-width: none; padding: 0; }
+    .hero { padding-block: 0 20px; }
+    h1 { font-size: 40px; }
+    section { padding-block: 20px; }
+    .item, .skills { break-inside: avoid; }
   }
 </style>
 </head>
@@ -247,163 +321,299 @@
 
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<nav aria-label="Primary navigation">
+<nav class="site-nav" aria-label="Primary">
   <div class="wrap">
-    <a href="#top" class="mark" aria-label="Aashish Reddy Solipuram — home">Aashish<span aria-hidden="true">.</span></a>
+    <a href="#top" class="mark" aria-label="Aashish Reddy Solipuram, back to top">Aashish Solipuram</a>
     <ul>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#work">Projects</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li class="hide-sm"><a href="#education">Education</a></li>
+      <li class="hide-sm"><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-<main class="wrap" id="main-content" tabindex="-1">
+<main id="main-content" tabindex="-1">
 
-  <header>
-    <div class="eyebrow"><span class="dot" aria-hidden="true"></span>Open to full-time roles · Jan 2027</div>
-    <h1>Aashish Reddy<br>Solipuram</h1>
-    <p class="lede">Software engineer working where <strong>enterprise systems</strong>, <strong>cloud</strong>, and <strong>applied AI</strong> meet. Formerly at Amazon. Now finishing an M.S. in Information Systems at Indiana University’s Kelley School of Business.</p>
-    <div class="links">
-      <a class="btn primary" href="mailto:aashishreddy792@gmail.com">Get in touch</a>
-      <a class="btn" href="https://www.linkedin.com/in/aashishreddy7" target="_blank" rel="me noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
-      <a class="btn" href="https://github.com/aaresoli" target="_blank" rel="me noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+  <header class="hero wrap">
+    <p class="status">Open to full-time roles starting January 2027</p>
+    <h1><span>Aashish Reddy</span><span>Solipuram</span></h1>
+
+    <div class="hero-grid">
+      <div>
+        <p class="lede v all">I build software where enterprise systems, cloud, and applied AI meet. I was a software development engineer on Amazon’s payment services, and I’m finishing an M.S. in Information Systems at Indiana University’s Kelley School of Business.</p>
+        <p class="lede v swe">Software engineer with production experience on AWS payment services at Amazon. I build full-stack and AI systems in Python and TypeScript with FastAPI, LangGraph, Next.js, and PostgreSQL.</p>
+        <p class="lede v erp">I configure and connect enterprise systems: SAP S/4HANA across FI/CO, MM, PP, SD, and HR, the data platforms that report on them, and the cloud services around them.</p>
+        <p class="lede v consulting">I turn a client’s brief into a working system and a plan they can run without me, from scoping and architecture through delivery, training, and handoff.</p>
+
+        <div class="focus" role="group" aria-labelledby="focus-label">
+          <p class="focus-label" id="focus-label">Focus</p>
+          <p class="focus-hint">Reorders the page and swaps in the details that matter for each kind of role.</p>
+          <div class="focus-options">
+            <button type="button" id="focus-all" data-set-focus="all" aria-pressed="true">Everything</button>
+            <button type="button" id="focus-swe" data-set-focus="swe" aria-pressed="false">Software engineering</button>
+            <button type="button" id="focus-erp" data-set-focus="erp" aria-pressed="false">Enterprise systems</button>
+            <button type="button" id="focus-consulting" data-set-focus="consulting" aria-pressed="false">Consulting</button>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a href="mailto:aashishreddy792@gmail.com">Email me</a>
+          <a href="https://www.linkedin.com/in/aashishreddy7" target="_blank" rel="me noopener noreferrer">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+          <a href="https://github.com/aaresoli" target="_blank" rel="me noopener noreferrer">GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+        </div>
+      </div>
+
+      <dl class="facts">
+        <div><dt>Now</dt><dd>M.S. Information Systems, Indiana University Kelley, December 2026</dd></div>
+        <div><dt>Before</dt><dd>Software Development Engineer, Amazon payments</dd></div>
+        <div><dt>Based in</dt><dd>Bloomington, Indiana</dd></div>
+      </dl>
     </div>
   </header>
 
-  <section class="about reveal" id="about">
-    <h2><span class="section-number" aria-hidden="true">01</span>About</h2>
-    <p>I build reliable systems and help organizations put them to work — from hardening <em>payment services</em> at Amazon and configuring an <em>academic SAP S/4HANA</em> digital core to shipping an <em>applied-AI job platform</em> end to end.</p>
-    <p>I like problems that sit between the code and the business: where architecture, governance, and real users all have to line up.</p>
-    <dl class="stats">
-      <div class="stat"><dt class="n">≈93%</dt><dd class="l">reduction in daily socket exception errors on Amazon payment services</dd></div>
-      <div class="stat"><dt class="n">89.7%</dt><dd class="l">relevance accuracy on real job postings for an AI platform I led</dd></div>
-      <div class="stat"><dt class="n">$7B</dt><dd class="l">manufacturer studied in an academic SAP and Snowflake transformation roadmap</dd></div>
-    </dl>
-  </section>
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <div class="list">
 
-  <section class="reveal" id="experience">
-    <h2><span class="section-number" aria-hidden="true">02</span>Experience</h2>
+        <article class="item">
+          <div class="meta">
+            <p class="when"><time datetime="2026-05">May</time> – <time datetime="2026-08">Aug 2026</time></p>
+            <p class="where">Bloomington, IN</p>
+            <p class="result"><span class="fig">89.7%</span><span class="cap">relevance accuracy on real job postings</span></p>
+          </div>
+          <div class="body">
+            <h3>Kelley HOPE</h3>
+            <p class="role">Technical Consultant</p>
+            <ul class="details v all">
+              <li>Led a <b>5-person team</b> as technical lead from design through handoff, architecting an AI job-discovery platform for Graduate Career Services.</li>
+              <li>Built compliant pipelines to ingest, deduplicate, classify, and rank jobs from public applicant tracking system (ATS) platforms; shaped LinkedIn and Handshake sourcing through Terms of Service analysis.</li>
+              <li>Developed explainable matching across five MSIS concentrations, achieving <b>89.7% relevance accuracy</b> on real postings; delivered training and runbooks enabling independent operation by Graduate Career Services.</li>
+            </ul>
+            <ul class="details v swe">
+              <li>Architected and shipped an AI job-discovery platform with Next.js, FastAPI, LangGraph, PostgreSQL/pgvector, Celery, and Redis, leading a <b>5-person team</b> as technical lead from design through handoff.</li>
+              <li>Built compliant pipelines to ingest, deduplicate, classify, and rank jobs from public applicant tracking system (ATS) platforms; shaped LinkedIn and Handshake sourcing through Terms of Service analysis.</li>
+              <li>Developed explainable matching across five MSIS concentrations, achieving <b>89.7% relevance accuracy</b> on real postings; delivered training and runbooks enabling independent operation by Graduate Career Services.</li>
+            </ul>
+            <ul class="details v erp">
+              <li>Led a <b>5-person team</b> as technical lead to scope, build, and hand off an AI job-discovery platform for Graduate Career Services.</li>
+              <li>Built compliant data pipelines to ingest, deduplicate, classify, and rank jobs from public applicant tracking system (ATS) platforms; shaped LinkedIn and Handshake sourcing through Terms of Service analysis.</li>
+              <li>Delivered explainable matching across five MSIS concentrations with <b>89.7% relevance accuracy</b> on real postings; created training and runbooks so Graduate Career Services can operate the platform independently.</li>
+            </ul>
+            <ul class="details v consulting">
+              <li>Led a <b>5-person team</b> as technical lead to scope, build, and hand off an AI job-discovery platform for Graduate Career Services.</li>
+              <li>Shaped a compliant LinkedIn and Handshake sourcing strategy through Terms of Service analysis; built data pipelines to ingest, deduplicate, classify, and rank jobs from public applicant tracking systems.</li>
+              <li>Delivered explainable matching across five MSIS concentrations with <b>89.7% relevance accuracy</b> on real postings; created training and runbooks so Graduate Career Services can operate the platform independently.</li>
+            </ul>
+            <ul class="tags" aria-label="Technologies used at Kelley HOPE"><li>Next.js</li><li>FastAPI</li><li>LangGraph</li><li>PostgreSQL / pgvector</li><li>Celery</li><li>Redis</li></ul>
+          </div>
+        </article>
 
-    <div class="item">
-      <div class="when"><time datetime="2026-05">May</time> – <time datetime="2026-08">Aug 2026</time></div>
-      <div>
-        <h3>Kelley HOPE</h3>
-        <div class="role">Technical Consultant · Bloomington, IN</div>
-        <ul class="details">
-          <li>Led a <b>5-person team</b> as technical lead to scope, build, and hand off an AI job-discovery platform for Graduate Career Services.</li>
-          <li>Built compliant pipelines to ingest, deduplicate, classify, and rank jobs from public ATS platforms; shaped LinkedIn and Handshake sourcing through Terms of Service analysis.</li>
-          <li>Delivered explainable matching across five MSIS concentrations with <b>89.7% relevance accuracy</b>, plus training and runbooks enabling independent operation by Graduate Career Services.</li>
-        </ul>
-        <ul class="tags" aria-label="Technologies used at Kelley HOPE"><li class="tag">Next.js</li><li class="tag">FastAPI</li><li class="tag">LangGraph</li><li class="tag">PostgreSQL / pgvector</li><li class="tag">Celery</li><li class="tag">Redis</li></ul>
-      </div>
-    </div>
+        <article class="item">
+          <div class="meta">
+            <p class="when"><time datetime="2023-07">Jul</time> – <time datetime="2023-12">Dec 2023</time></p>
+            <p class="where">Bengaluru, India</p>
+            <p class="result"><span class="fig">80 → 100</span><span class="cap">service resilience score</span></p>
+          </div>
+          <div class="body">
+            <h3>Amazon</h3>
+            <p class="role">Software Development Engineer</p>
+            <ul class="details v all erp consulting">
+              <li>Raised the service resilience score from <b>80 to a perfect 100</b> by designing stress and chaos tests for AWS-based payment services that exposed failure points and confirmed recovery under load.</li>
+              <li>Cut daily socket exceptions from <b>30–40 to 2–3</b> by tracing recurring failures and tuning socket configurations.</li>
+              <li>Built backend support for Hard Decline payment messaging, mapping warning codes to localized customer-facing strings and testing them in sandbox and integration environments.</li>
+            </ul>
+            <ul class="details v swe">
+              <li>Cut daily socket exceptions from <b>30–40 to 2–3</b> by tracing recurring failures and tuning socket configurations.</li>
+              <li>Raised the service resilience score from <b>80 to a perfect 100</b> by designing stress and chaos tests for AWS-based payment services that exposed failure points and confirmed recovery under load.</li>
+              <li>Built backend support for Hard Decline payment messaging, mapping warning codes to localized customer-facing strings and testing them in sandbox and integration environments.</li>
+            </ul>
+            <ul class="tags" aria-label="Areas of work at Amazon"><li>AWS</li><li>Payment services</li><li>Stress and chaos testing</li><li>Integration testing</li></ul>
+          </div>
+        </article>
 
-    <div class="item">
-      <div class="when"><time datetime="2023-07">Jul</time> – <time datetime="2023-12">Dec 2023</time></div>
-      <div>
-        <h3>Amazon</h3>
-        <div class="role">Software Development Engineer · Bengaluru, India</div>
-        <ul class="details">
-          <li>Raised the <b>service resilience score by 20 points</b> by designing stress and chaos-testing scenarios for AWS-based payment services and validating recovery under load.</li>
-          <li>Cut daily socket exception errors from <b>30–40 to 2–3</b> by analyzing failure patterns and tuning socket configurations.</li>
-          <li>Built backend support for Hard Decline payment messaging, mapping warning codes to localized customer-facing strings.</li>
-        </ul>
-        <ul class="tags" aria-label="Technologies used at Amazon"><li class="tag">AWS</li><li class="tag">Java</li><li class="tag">Chaos testing</li><li class="tag">Payments</li></ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="reveal" id="work">
-    <h2><span class="section-number" aria-hidden="true">03</span>Selected projects</h2>
-
-    <div class="item">
-      <div class="when"><time datetime="2026-08">Aug 2026</time> – Present</div>
-      <div>
-        <h3>Multi-Brand Generative AI Governance</h3>
-        <div class="role">Graduate capstone for Marriott International with Accenture</div>
-        <ul class="details">
-          <li>Designing AI brand and IP governance, with an MCP server that resolves Global → Brand → Region → Property brand rules.</li>
-          <li>Architecting BrandVoice Studio, featuring an LLM-as-judge <b>Brand Fidelity Gate</b> that routes drafts to pass, review, or block.</li>
-        </ul>
-        <ul class="tags" aria-label="Technologies used for the AI governance capstone"><li class="tag">Claude</li><li class="tag">LangGraph</li><li class="tag">MCP</li><li class="tag">FastAPI</li><li class="tag">pgvector</li></ul>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="when"><time datetime="2026-04">Apr</time> – <time datetime="2026-05">May 2026</time></div>
-      <div>
-        <h3>SAP S/4HANA Digital Core</h3>
-        <div class="role">Academic project · Global healthcare manufacturer</div>
-        <ul class="details">
-          <li>Configured an integrated S/4HANA architecture spanning Finance, Procurement, Manufacturing, Supply Chain, and Sales across multiple countries.</li>
-          <li>Developed business blueprints, MRP-enabled supply chain workflows, and BOM/routing structures.</li>
-        </ul>
-        <ul class="tags" aria-label="Technologies used for the SAP project"><li class="tag">SAP S/4HANA</li><li class="tag">MRP</li><li class="tag">FI / MM / PP / SD</li></ul>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="when"><time datetime="2025-11">Nov</time> – <time datetime="2025-12">Dec 2025</time></div>
-      <div>
-        <h3>Enterprise Transformation &amp; Financial Intelligence</h3>
-        <div class="role">Academic strategy project · $7B manufacturing enterprise</div>
-        <ul class="details">
-          <li>Built a transformation roadmap unifying SAP S/4HANA, Snowflake, and identity platforms to reduce system fragmentation.</li>
-          <li>Designed a financial intelligence architecture for real-time, <b>SOX-aligned</b> reporting to support a faster close.</li>
-        </ul>
-        <ul class="tags" aria-label="Technologies used for the transformation project"><li class="tag">SAP</li><li class="tag">Snowflake</li><li class="tag">IT Strategy</li><li class="tag">Governance</li></ul>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="when"><time datetime="2024-07">Jul</time> – <time datetime="2024-10">Oct 2024</time></div>
-      <div>
-        <h3>Real-Time Social Media Platform</h3>
-        <div class="role">Full-stack academic project</div>
-        <ul class="details">
-          <li>Built feeds, DMs, notifications, and media uploads, with Redis-backed real-time SSE, trending, and rate limits.</li>
-          <li>Implemented shared Zod contracts, Docker deployment, and CI with backend, frontend, and Playwright tests.</li>
-        </ul>
-        <ul class="tags" aria-label="Technologies used for the social platform"><li class="tag">React</li><li class="tag">TypeScript</li><li class="tag">Express</li><li class="tag">Prisma</li><li class="tag">PostgreSQL</li></ul>
       </div>
     </div>
   </section>
 
-  <section class="reveal" id="education">
-    <h2><span class="section-number" aria-hidden="true">04</span>Education</h2>
-    <div class="item">
-      <div class="when"><time datetime="2026-12">Dec 2026</time></div>
-      <div>
-        <h3>Indiana University — Kelley School of Business</h3>
-        <div class="role">M.S. in Information Systems · Digital Enterprise Systems and AI · GPA 3.7/4.0</div>
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <div class="list" id="project-list">
+
+        <article class="item" data-order="all:1 swe:1 erp:3 consulting:1">
+          <div class="meta">
+            <p class="when"><time datetime="2026-08">Aug 2026</time> – Present</p>
+            <p class="where">Accenture capstone</p>
+          </div>
+          <div class="body">
+            <h3>AI marketing claim verification for Marriott</h3>
+            <p class="role">Review agent for AI-drafted promotional emails</p>
+            <ul class="details v all">
+              <li>Reframed Accenture’s brief from brand-voice generation to claim verification to reduce liability risk.</li>
+              <li>Engineered an AI review agent for Marriott promotional emails that verifies every price, fee, offer, and loyalty perk against an approved source valid for that hotel, region, and send, booking, and stay dates.</li>
+              <li>Implemented pass, clarify, or escalate routing with a person approving every send; building a 24-email planted-error test set to validate an <b>85% catch target</b>.</li>
+            </ul>
+            <ul class="details v swe">
+              <li>Engineered a Claude and LangGraph agent on FastAPI and pgvector that extracts every price, fee, offer, and perk from AI-drafted Marriott emails and verifies each against approved sources valid for the hotel and dates.</li>
+              <li>Implemented pass, clarify, or escalate routing with source and owner shown on every result and human approval before send; building a 24-email planted-error test harness to validate an <b>85% catch target</b>.</li>
+            </ul>
+            <ul class="details v erp">
+              <li>Built an AI agent that verifies every price, offer, and loyalty perk in Marriott promotional emails against approved sources valid for the hotel, region, and dates, routing each to pass, clarify, or escalate.</li>
+            </ul>
+            <ul class="details v consulting">
+              <li>Reframed Accenture’s brief from brand-voice generation to claim verification, citing firms’ liability for AI misstatements (the Air Canada ruling) and hidden fees (the FTC fee rule); scoped W Hotels and Courtyard emails.</li>
+              <li>Delivered a prototype that checks every price, offer, and perk against an approved, date-valid source and routes each to pass, clarify, or escalate, with source owners mapped and a person approving every send.</li>
+              <li>Building a 24-email planted-error test set to validate the agent’s accuracy against an <b>85% catch target</b>.</li>
+            </ul>
+            <ul class="tags" aria-label="Technologies used for the Marriott capstone"><li>Claude</li><li>LangGraph</li><li>FastAPI</li><li>pgvector</li></ul>
+          </div>
+        </article>
+
+        <article class="item" data-order="all:2 swe:2 erp:1 consulting:2">
+          <div class="meta">
+            <p class="when"><time datetime="2026-04">Apr</time> – <time datetime="2026-05">May 2026</time></p>
+            <p class="where">Kelley course project</p>
+          </div>
+          <div class="body">
+            <h3>SAP S/4HANA digital core configuration</h3>
+            <p class="role">$1.15B diagnostics manufacturer, plants in the US and Singapore, six global sales offices</p>
+            <ul class="details v all">
+              <li>Configured SAP S/4HANA across US and Singapore plants and six global sales offices, covering FI/CO, MM, PP, SD, and HR with multi-currency accounting under local standards.</li>
+              <li>Designed the business blueprint (enterprise structure, master data, BPMN flows), multi-level BOMs, routings, and a 3-tier PO approval strategy; demonstrated MRP at both plants and cross-border stock transfer.</li>
+            </ul>
+            <ul class="details v swe">
+              <li>Configured SAP S/4HANA across US and Singapore plants and six global sales offices, integrating FI/CO, MM, PP, SD, and HR on a single multi-currency data model.</li>
+              <li>Modeled master data, multi-level BOMs, and routings; built a 3-tier PO approval workflow and validated MRP and cross-border stock transfer through unit and integrated end-to-end testing.</li>
+            </ul>
+            <ul class="details v erp">
+              <li>Configured the enterprise structure for US and Singapore plants and six sales offices, with operating and country charts of accounts for multi-currency reporting.</li>
+              <li>Defined cost and profit center hierarchies with primary and secondary cost elements to track profitability.</li>
+              <li>Created multi-level BOMs with alternate components and routings with labor and machine times for six products; ran MRP across both plants and demonstrated cross-border stock transfer and sale.</li>
+              <li>Configured a 3-tier purchase order release strategy (<b>$50K and $500K thresholds</b>), mapped BPMN process flows, and executed unit and integrated testing across procure-to-pay, plan-to-produce, and order-to-cash.</li>
+            </ul>
+            <ul class="details v consulting">
+              <li>Translated the manufacturer’s requirements into an SAP S/4HANA business blueprint covering enterprise structure, master data, and BPMN processes across two plants and six global sales offices.</li>
+              <li>Configured Finance, Procurement, Manufacturing, and Sales with a 3-tier PO approval strategy, then validated MRP and cross-border stock transfer through integrated testing traced to every requirement.</li>
+            </ul>
+            <ul class="tags" aria-label="Technologies used for the SAP project"><li>SAP S/4HANA</li><li>FI/CO</li><li>MM</li><li>PP</li><li>SD</li><li>HR</li><li>BPMN</li><li>MRP</li></ul>
+          </div>
+        </article>
+
+        <article class="item" data-order="all:3 erp:2 consulting:3">
+          <div class="meta">
+            <p class="when"><time datetime="2025-11">Nov</time> – <time datetime="2025-12">Dec 2025</time></p>
+            <p class="where">Kelley core project</p>
+          </div>
+          <div class="body">
+            <h3>Toyota Material Handling digital transformation</h3>
+            <p class="role">$7B parent of the Toyota and Raymond forklift brands</p>
+            <ul class="details v all swe">
+              <li>Authored a multi-year transformation roadmap covering end-state architecture, Active Directory and collaboration-tool consolidation, and legacy rationalization.</li>
+              <li>Designed a financial intelligence architecture unifying data across disparate ERPs on Snowflake with AI-assisted cleansing for <b>SOX-compliant</b> reporting; delivered a working prototype, cost-benefit analysis, and whitepaper.</li>
+            </ul>
+            <ul class="details v erp">
+              <li>Designed an end-state architecture anchored on the SAP S/4HANA digital core, with legacy rationalization and Active Directory consolidation.</li>
+              <li>Developed an integrated financial data model unifying disparate ERPs on Snowflake with AI-assisted cleansing for <b>SOX-compliant</b> reporting; delivered a working prototype and multi-year transformation roadmap.</li>
+            </ul>
+            <ul class="details v consulting">
+              <li>Advised the company on a multi-year roadmap spanning IT consolidation, identity unification, operating model, and change management, backed by cost-benefit analysis.</li>
+              <li>Designed a <b>SOX-compliant</b> financial intelligence architecture unifying data across disparate ERPs on Snowflake; delivered the final recommendation, a working prototype, and a whitepaper.</li>
+            </ul>
+            <ul class="tags" aria-label="Technologies and areas for the Toyota project"><li>Snowflake</li><li>SAP S/4HANA</li><li>Active Directory</li><li>IT strategy</li><li>SOX reporting</li></ul>
+          </div>
+        </article>
+
+        <article class="item" data-order="all:4 swe:3">
+          <div class="meta">
+            <p class="when"><time datetime="2024-07">Jul</time> – <time datetime="2024-10">Oct 2024</time></p>
+            <p class="where">Personal project</p>
+          </div>
+          <div class="body">
+            <h3>Real-time social media platform</h3>
+            <p class="role">Full-stack web app</p>
+            <ul class="details v all swe erp consulting">
+              <li>Developed a full-stack social app supporting auth, feeds, posts, replies, likes, follows, direct messages, real-time notifications, and media uploads.</li>
+              <li>Implemented Redis-backed real-time updates via server-sent events (SSE), trending feeds, and rate limiting, using shared Zod contracts to keep request and response types in sync between client and server.</li>
+              <li>Containerized the app with Docker and set up CI running backend, frontend, and Playwright end-to-end tests.</li>
+            </ul>
+            <ul class="tags" aria-label="Technologies used for the social platform"><li>React</li><li>TypeScript</li><li>Express</li><li>Prisma</li><li>PostgreSQL</li><li>Redis</li><li>Docker</li><li>Playwright</li></ul>
+          </div>
+        </article>
+
       </div>
+      <p class="filter-note" id="filter-note" hidden></p>
     </div>
-    <div class="item">
-      <div class="when"><time datetime="2024-05">May 2024</time></div>
-      <div>
-        <h3>BITS Pilani — Hyderabad</h3>
-        <div class="role">B.E. in Electronics and Instrumentation · Minor in Computing and Intelligence</div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <h2>Education</h2>
+      <div class="list">
+        <article class="item">
+          <div class="meta">
+            <p class="when"><time datetime="2026-12">Dec 2026</time></p>
+            <p class="where">Bloomington, IN</p>
+            <p class="result"><span class="fig">3.7</span><span class="cap">GPA out of 4.0</span></p>
+          </div>
+          <div class="body">
+            <h3>Indiana University, Kelley School of Business</h3>
+            <p class="role">Master of Science in Information Systems, concentration in Digital Enterprise Systems and AI</p>
+            <p class="coursework"><strong>Coursework</strong> Enterprise Platforms; Cloud &amp; Platform Architecture; Enterprise Data Management; Agentic AI Systems; IT Strategy; IT Governance, Risk &amp; Controls; AI Strategy; Product Management</p>
+          </div>
+        </article>
+        <article class="item">
+          <div class="meta">
+            <p class="when"><time datetime="2024-05">May 2024</time></p>
+            <p class="where">Hyderabad, India</p>
+          </div>
+          <div class="body">
+            <h3>BITS Pilani, Hyderabad Campus</h3>
+            <p class="role">Bachelor of Engineering in Electronics and Instrumentation, minor in Computing and Intelligence</p>
+            <p class="coursework"><strong>Coursework</strong> Artificial Intelligence; Machine Learning; Cryptography; Operating Systems; Data Structures and Algorithms</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="reveal" id="skills">
-    <h2><span class="section-number" aria-hidden="true">05</span>Toolkit</h2>
-    <dl class="skills">
-      <dt>Languages</dt><dd>Python, TypeScript, Java, C++, Scala</dd>
-      <dt>AI &amp; Backend</dt><dd>LangGraph, MCP, FastAPI, Express, PostgreSQL, pgvector, Redis, Celery</dd>
-      <dt>Web &amp; Testing</dt><dd>React, Next.js, Playwright</dd>
-      <dt>Enterprise</dt><dd>SAP S/4HANA, Snowflake, UiPath, n8n, Tableau</dd>
-      <dt>Cloud, Data &amp; DevOps</dt><dd>AWS, Docker, Spark, Git</dd>
-    </dl>
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <dl class="skills v all">
+        <dt>Programming and frameworks</dt><dd>Python, C++, TypeScript, Scala, Java, React, Next.js, Express.js, SQL (PostgreSQL), pgvector, FastAPI, LangGraph, Playwright, MCP</dd>
+        <dt>Cloud, enterprise, and tools</dt><dd>AWS, SAP S/4HANA, Snowflake, Redis, Celery, Docker, Spark, UiPath, n8n, Tableau, Git</dd>
+      </dl>
+      <dl class="skills v swe">
+        <dt>Programming and frameworks</dt><dd>Python, TypeScript, Java, C++, Scala, React, Next.js, FastAPI, Express.js, LangGraph, MCP, SQL (PostgreSQL), pgvector, Prisma, Playwright</dd>
+        <dt>Cloud and tools</dt><dd>AWS, Docker, Redis, Celery, Git, Spark, Snowflake, n8n, UiPath, SAP S/4HANA, Tableau</dd>
+      </dl>
+      <dl class="skills v erp">
+        <dt>Enterprise systems and data</dt><dd>SAP S/4HANA (FI/CO, MM, PP, SD), BPMN, Snowflake, AWS, Tableau, UiPath</dd>
+        <dt>Programming and tools</dt><dd>Python, Java, TypeScript, C++, Scala, SQL (PostgreSQL), FastAPI, LangGraph, React, Next.js, Docker, Git, Redis, Celery, Spark, n8n</dd>
+      </dl>
+      <dl class="skills v consulting">
+        <dt>Enterprise and cloud</dt><dd>SAP S/4HANA, Snowflake, AWS, Tableau, UiPath, n8n, Spark, Docker, Git</dd>
+        <dt>Programming and AI</dt><dd>Python, TypeScript, Java, C++, Scala, React, Next.js, FastAPI, SQL (PostgreSQL), pgvector, LangGraph, MCP, Redis, Celery</dd>
+      </dl>
+    </div>
   </section>
 
-  <section class="contact reveal" id="contact">
-    <h2><span class="section-number" aria-hidden="true">06</span>Contact</h2>
-    <address class="contact-email"><a href="mailto:aashishreddy792@gmail.com">aashishreddy792@gmail.com</a></address>
-    <p>Looking for software engineering, enterprise systems, and technology consulting roles starting early 2027. Happy to chat.</p>
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <address class="contact-email"><a href="mailto:aashishreddy792@gmail.com" id="email-link">aashishreddy792@gmail.com</a></address>
+      <div class="contact-row">
+        <button type="button" class="copy" id="copy-email">Copy email address</button>
+        <p>I’m looking for software engineering, enterprise systems, and technology consulting roles starting in early 2027.</p>
+      </div>
+      <div class="actions">
+        <a href="https://www.linkedin.com/in/aashishreddy7" target="_blank" rel="me noopener noreferrer">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+        <a href="https://github.com/aaresoli" target="_blank" rel="me noopener noreferrer">GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+    </div>
   </section>
 </main>
 
@@ -415,24 +625,93 @@
 </footer>
 
 <script>
-  const revealElements = document.querySelectorAll(".reveal");
-  const showAll = () => revealElements.forEach(element => element.classList.add("in"));
+  (function () {
+    var root = document.documentElement;
+    var buttons = document.querySelectorAll("[data-set-focus]");
+    var projects = document.querySelectorAll("#project-list .item");
+    var note = document.getElementById("filter-note");
+    var names = { swe: "software engineering", erp: "enterprise systems", consulting: "consulting" };
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    showAll();
-  } else {
-    try {
-      const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in");
-          observer.unobserve(entry.target);
-        }
-      }), { threshold: 0.08 });
-      revealElements.forEach(element => observer.observe(element));
-    } catch {
-      showAll();
+    function parseOrder(el) {
+      var map = {};
+      (el.getAttribute("data-order") || "").split(/\s+/).forEach(function (pair) {
+        var parts = pair.split(":");
+        if (parts.length === 2) map[parts[0]] = Number(parts[1]);
+      });
+      return map;
     }
-  }
+
+    function apply(focus) {
+      if (focus === "all") root.removeAttribute("data-focus");
+      else root.setAttribute("data-focus", focus);
+
+      buttons.forEach(function (b) {
+        b.setAttribute("aria-pressed", String(b.getAttribute("data-set-focus") === focus));
+      });
+
+      var hiddenCount = 0;
+      projects.forEach(function (item) {
+        var order = parseOrder(item)[focus];
+        item.hidden = order === undefined;
+        if (order === undefined) hiddenCount++;
+        else item.style.order = order;
+      });
+
+      if (hiddenCount) {
+        var shown = projects.length - hiddenCount;
+        note.innerHTML = "";
+        note.append("Showing " + shown + " of " + projects.length + " projects for " + names[focus] + ". ");
+        var all = document.createElement("button");
+        all.type = "button";
+        all.textContent = "Show all projects";
+        all.addEventListener("click", function () { change("all"); });
+        note.append(all);
+        note.hidden = false;
+      } else {
+        note.hidden = true;
+      }
+
+      try {
+        var url = new URL(location.href);
+        if (focus === "all") url.searchParams.delete("focus");
+        else url.searchParams.set("focus", focus);
+        history.replaceState(null, "", url);
+      } catch (e) {}
+    }
+
+    function change(focus) {
+      if (document.startViewTransition && !reduceMotion) document.startViewTransition(function () { apply(focus); });
+      else apply(focus);
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener("click", function () { change(b.getAttribute("data-set-focus")); });
+    });
+
+    apply(root.getAttribute("data-focus") || "all");
+
+    var copyButton = document.getElementById("copy-email");
+    var email = "aashishreddy792@gmail.com";
+    copyButton.addEventListener("click", function () {
+      function done(text) {
+        copyButton.textContent = text;
+        setTimeout(function () { copyButton.textContent = "Copy email address"; }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(function () { done("Copied"); }, function () { selectEmail(); done("Press Ctrl+C to copy"); });
+      } else {
+        selectEmail(); done("Press Ctrl+C to copy");
+      }
+    });
+    function selectEmail() {
+      var range = document.createRange();
+      range.selectNodeContents(document.getElementById("email-link"));
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    }
+  })();
 </script>
 </body>
 </html>
